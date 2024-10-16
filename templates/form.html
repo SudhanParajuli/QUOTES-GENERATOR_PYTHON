@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title%}
+Form
+{% endblock%}
+{% block body%}
+
+<form action="{{url_for('quotes')}}"method="POST"><p class="form-label">Author Name:</p>
+    <input type='text' class="form-control" name='author'value="Sudhan Parajuli"></input>
+    <p class="form-label">Numbers of Quotes:</p>
+    <input type='number' class="form-control" name='number'></input>
+    <input type="submit" value="generate" ></input>
+</form>
+
+{%for quote in quotes%}
+<div class="alert alert-info" role="alert">
+    {{quote.quote}}-{{quote.author}}
+  </div>
+{%endfor%}
+{% endblock%}

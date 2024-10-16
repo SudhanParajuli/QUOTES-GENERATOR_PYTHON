@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title%}
+Quotes
+{% endblock%}
+{% block body%}
+{%for quote in quotes%}
+<br>
+<div class="alert alert-info" role="alert">
+    {{quote.quote}}-{{quote.author}}
+  </div>
+{%endfor%}
+{% endblock%}
+{%block style%}
+{%endblock%}
